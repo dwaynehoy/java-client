@@ -1,7 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'maven'
 
-group = 'com.github.pikob'
+group = 'com.github.pikob.java-client'
 version = '1.0.0'
 
 sourceCompatibility = JavaVersion.VERSION_1_7
