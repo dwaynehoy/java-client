@@ -69,15 +69,23 @@ public class WebsocketTransport extends HttpClientTransport {
         boolean isSsl = false;
         String url = null;
         try {
-            url = connection.getUrl() + "signalr/" + connectionString + '?'
+            url = connection.getUrl() + connectionString + '?'
                     + "connectionData=" + URLEncoder.encode(URLEncoder.encode(connectionData, "UTF-8"), "UTF-8")
-                    + "&connectionToken=" + URLEncoder.encode(URLEncoder.encode(connectionToken, "UTF-8"), "UTF-8")
-                    + "&groupsToken=" + URLEncoder.encode(groupsToken, "UTF-8")
-                    + "&messageId=" + URLEncoder.encode(messageId, "UTF-8")
-                    + "&transport=" + URLEncoder.encode(transport, "UTF-8");
+                    + "&connectionToken=" + URLEncoder.encode(URLEncoder.encode(connectionToken, "UTF-8"), "UTF-8");
+            if (!groupsToken.isEmpty()) {
+                    url+= "&groupsToken=" + URLEncoder.encode(groupsToken, "UTF-8");
+            }
+            if (!messageId.isEmpty()) {
+                    url += "&messageId=" + URLEncoder.encode(messageId, "UTF-8");
+            }
+            if (!transport.isEmpty()) {
+                    url += "&transport=" + URLEncoder.encode(transport, "UTF-8");
+            }
+
             if (connection.getQueryString() != null) {
                 url += "&" + connection.getQueryString();
             }
+
             if (url.startsWith("https://")) {
                 isSsl = true;
                 url = url.replace("https://", "wss://");
