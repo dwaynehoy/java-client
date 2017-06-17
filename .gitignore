@@ -24,3 +24,8 @@ local.properties
 .idea/*
 
 .gradle/*
+/.gradle/
+.project
+.settings
+.classpath
+
