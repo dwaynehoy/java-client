@@ -10,7 +10,7 @@ import microsoft.aspnet.signalr.client.ConnectionBase;
 import microsoft.aspnet.signalr.client.SignalRFuture;
 
 /**
- * Represents a client implementation of a network transport
+ * Represents a mClient implementation of a network transport
  */
 public interface ClientTransport {
 
