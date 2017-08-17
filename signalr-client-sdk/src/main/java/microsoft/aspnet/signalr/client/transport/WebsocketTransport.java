@@ -174,6 +174,8 @@ public class WebsocketTransport extends HttpClientTransport {
         return mConnectionFuture;
     }
 
+
+
     @Override
     public SignalRFuture<Void> send(ConnectionBase connection, String data, DataResultCallback callback) {
         mWebSocketClient.send(data);
