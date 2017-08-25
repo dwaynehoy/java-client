@@ -158,7 +158,7 @@ public class OkWebSocketTransport implements ClientTransport {
         connection.closed(new Runnable() {
             @Override
             public void run() {
-                mWebsocket.close(0, "Connection stopped");
+                mWebsocket.close(1000, "Client close requested");
             }
         });
 

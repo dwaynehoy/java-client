@@ -42,6 +42,7 @@ public interface ClientTransport {
      */
     SignalRFuture<Void> start(ConnectionBase connection, ConnectionType connectionType, DataResultCallback callback);
 
+
     /**
      * Sends data using the transport
      *
