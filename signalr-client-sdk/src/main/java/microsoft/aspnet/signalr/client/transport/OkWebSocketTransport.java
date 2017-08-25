@@ -144,7 +144,7 @@ public class OkWebSocketTransport implements ClientTransport {
             @Override
             public void onClosed(WebSocket webSocket, int code, String reason) {
                 log("Socket is closed " + reason, LogLevel.Verbose);
-                mWebsocket.close(0, null);
+                mWebsocket.close(1000, "Client close requested");
             }
 
             @Override
