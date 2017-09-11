@@ -42,9 +42,7 @@ public class UpdateableCancellableFuture<V> extends SignalRFuture<V> {
         }
     }
 
-    @Override
-    public SignalRFuture<V> onError(ErrorCallback errorCallback) {
-        mFuture.onError(errorCallback);
-        return this;
-    }
+   public boolean innerErrorWasTriggered() {
+        return mFuture.errorWasTriggered();
+   }
 }
